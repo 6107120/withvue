@@ -8,6 +8,7 @@
     <input type="submit" value="uploadImgToPrivate" @click="uploadImgToPrivate" />
     <input type="submit" value="getImg" @click="getImg" />
     <input type="submit" value="test" @click="test" />
+    <input type="submit" value="removeImg" @click="removeImg" />
     <!-- <input type="submit" value="removeImg" @click="removeImg" /> -->
   </div>
 </template>
@@ -77,9 +78,14 @@ export default {
     },
     test: function() {
       Storage.list("", {
-        level: "protected",
+        level: "protected"
         // identityId: "xxx" // the identityId of that user })
       })
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
+    },
+    removeImg: function() {
+      Storage.remove("test.txt")
         .then(result => console.log(result))
         .catch(err => console.log(err));
     }
