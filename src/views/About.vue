@@ -18,6 +18,7 @@ import { API } from "aws-amplify";
 // import { Auth } from "aws-amplify";
 import { Storage } from "aws-amplify";
 
+
 export default {
   methods: {
     pet: async function() {
